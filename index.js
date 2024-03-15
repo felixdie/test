@@ -43,8 +43,6 @@
     </style>
 </head>
 <body>
-    <img id="car" src="e_tron_gt.png" alt="Flying Car">
+    <img id="car" src="https://github.com/felixdie/test/blob/main/e_tron_gt.png?raw=true">
 </body>
 </html>
-
-
