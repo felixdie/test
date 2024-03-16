@@ -2,21 +2,15 @@
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
         <style>
-            :host {
-                display: block;
+            body, html {
                 height: 100%;
                 margin: 0;
                 padding: 0;
                 overflow: hidden;
             }
-            .container {
-                height: 100%;
-                position: relative;
-                overflow: hidden;
-            }
-            .container::before {
+            body::before {
                 content: '';
-                position: absolute;
+                position: fixed;
                 top: 0;
                 left: 0;
                 width: 100%;
@@ -29,9 +23,10 @@
                 position: absolute;
                 top: 50%;
                 left: -100px;
-                animation: flyAcross 5s linear forwards;
                 z-index: 0;
+                animation: flyAcross 5s linear forwards;
             }
+    
             @keyframes flyAcross {
                 from {
                     left: -100px;
