@@ -52,14 +52,6 @@
       super();
       this.attachShadow({ mode: "open" }).appendChild(template.content.cloneNode(true));
     }
-
-    connectedCallback() {
-      // Initialization code or further interaction setup can go here
-    }
-
-    disconnectedCallback() {
-      // Any cleanup work can go here
-    }
   }
 
   customElements.define("com-yournamespace-flyingcar", FlyingCarWidget);
