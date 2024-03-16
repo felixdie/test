@@ -1,11 +1,24 @@
 (function () {
-    let template = document.createElement("div");
+    let template = document.createElement("template");
     template.innerHTML = `
         <style>
-            :root {
-                --car-width: 100px; /* Example variable for car width */
+            body, html {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
             }
-
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: inherit;
+                filter: blur(5px);
+                z-index: -1;
+            }
             #car {
                 position: absolute;
                 top: 50%;
@@ -25,31 +38,12 @@
                 }
             }
         </style>
+       <div>
+    <body>
         <img id="car" src="https://github.com/felixdie/test/blob/main/e_tron_gt.png?raw=true">
-    `;
-
-    document.body.appendChild(template); // Append the template content to the body
-
-    // You may want to add the <style> part to the head instead for global effect
-    let styleElement = document.createElement('style');
-    styleElement.textContent = `
-        body, html {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: inherit;
-            filter: blur(5px);
-            z-index: -1;
-        }
-    `;
-    document.head.appendChild(styleElement);
-})();
+    </body>
+    </html>
+    </div>
+      `;
+    }
+)();
