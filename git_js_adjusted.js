@@ -1,13 +1,20 @@
-(function() {
-  const template = document.createElement('template');
+(function () {
+  let template = document.createElement("template");
   template.innerHTML = `
     <style>
         :host {
             display: block;
+            overflow: hidden;
+            width: 100%; /* Adjust width and height as needed */
             height: 100%;
+        }
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
             overflow: hidden;
         }
-        :host::before {
+        body::before {
             content: '';
             position: fixed;
             top: 0;
@@ -40,20 +47,20 @@
     <img id="car" src="https://github.com/felixdie/test/blob/main/e_tron_gt.png?raw=true">
   `;
 
-  class FlyingCarAnimation extends HTMLElement {
+  class FlyingCarWidget extends HTMLElement {
     constructor() {
       super();
-      this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true));
+      this.attachShadow({ mode: "open" }).appendChild(template.content.cloneNode(true));
     }
 
     connectedCallback() {
-      // Additional setup can be performed here
+      // Initialization code or further interaction setup can go here
     }
 
     disconnectedCallback() {
-      // Cleanup can be performed here
+      // Any cleanup work can go here
     }
   }
 
-  customElements.define('flying-car-animation', FlyingCarAnimation);
+  customElements.define("com-yournamespace-flyingcar", FlyingCarWidget);
 })();
