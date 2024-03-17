@@ -13,7 +13,7 @@
             this._firstConnection = false;
             this._tagContainer;
             this._tagType = "h1";
-            this._tagText = "Hello World";
+            this._tagText = "Hello World this is FD";
 
             //Adding event handler for click events
 			this.addEventListener("click", event => {
